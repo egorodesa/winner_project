@@ -4,11 +4,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_paper_trail
-
-
   has_many :received_messages, class_name: 'Message', foreign_key: :receiver_id
   has_many :sent_messages, class_name: 'Message', foreign_key: :sender_id
+
+
+
+
+  has_paper_trail
+
 
   extend FriendlyId
   # friendly_id :first_name

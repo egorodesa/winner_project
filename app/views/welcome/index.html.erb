@@ -1,5 +1,6 @@
 List of all registered users
 <p>
+
 <%= paginate @users %>
 
 <% @users.each do |user| %>
@@ -8,11 +9,3 @@ List of all registered users
   <%= link_to "<-> chat with", chatting_url(:receiver_id => user.id) unless user == current_user%> <br />
 <% end %>
 
-<p>
-<%= paginate @users2, param_name: 'my_best_page' %>
-<p>
-<% @users2.each do |user| %>
-  <strong>user id :</strong> <%= user.id %>,
-  <strong> user email: </strong><%= user.email %>
-  <%= link_to "<-> chat with", chatting_url(:receiver_id => user.id) unless user == current_user%> <br />
-<% end %>

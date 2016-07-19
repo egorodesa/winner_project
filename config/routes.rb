@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
+  # resources :messages
+
 
   get 'message/index/:receiver_id' => 'messages#index', as: :chatting
   post 'message/index/:receiver_id' => 'messages#create', as: :messages

@@ -1,8 +1,9 @@
-<strong>user</strong> <%= current_user.email %> <strong>chatting with</strong> <%= @receiver.email %>
+<strong>user</strong> <%= current_user.email %> <strong>chatting with</strong> <%= @receiver_user.email %>
 <p>
-<% unless @messages.blank? %>
-  <% @messages.each do |message| %>
-    <strong><%= message.sender %></strong> : <%= message.body %> at <%= message.created_at %><br/>
+<% if @messages %>
+  <% @messages.sort.each do |message| %>
+    <strong><%= message.sender.email %> wrote: </strong> <%= message.body %>
+    <sub>at <%= message.created_at %></sub><br/>
   <% end %>
 <% end %>
 

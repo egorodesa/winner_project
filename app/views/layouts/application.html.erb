@@ -13,8 +13,9 @@
 
   <%= link_to "homepage", root_path %> |
   <%= link_to "edit user", edit_user_registration_path %> |
-  <%= link_to "logout", destroy_user_session_path, method: :delete %> |
-  <%= link_to "delete user", {controller:'devise/registrations', action: 'destroy'}, method: :delete %>
+    <%#= link_to "delete user", {controller:'devise/registrations', action: 'destroy'}, method: :delete %> |
+  <%= link_to "logout", destroy_user_session_path, method: :delete %>
+
   <p>
 <% end %>
 
