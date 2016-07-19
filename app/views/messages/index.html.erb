@@ -1,0 +1,16 @@
+<strong>user</strong> <%= current_user.email %> <strong>chatting with</strong> <%= @receiver.email %>
+<p>
+<% unless @messages.blank? %>
+  <% @messages.each do |message| %>
+    <strong><%= message.sender %></strong> : <%= message.body %> at <%= message.created_at %><br/>
+  <% end %>
+<% end %>
+
+<p>
+Put in new message:
+<p>
+<%= form_for @message do |f| %>
+  <%= f.text_field :body %>
+  <%= f.hidden_field :receiver_id, { :receiver_id => @message.receiver_id } %>
+  <%= f.submit "Send" %>
+<% end %>
