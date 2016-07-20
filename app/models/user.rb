@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :received_messages, class_name: 'Message', foreign_key: :receiver_id
   has_many :sent_messages, class_name: 'Message', foreign_key: :sender_id
 
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" },
+                     default_url: "/system/images/noimg.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
 
 
@@ -18,7 +21,7 @@ class User < ActiveRecord::Base
   friendly_id :slug_candidates, use: :slugged
 
   def slug_candidates
-  [[:first_name, :last_name, :address]]
+  [[:first_name, :last_name]]
   end
 
   def should_generate_new_friendly_id?

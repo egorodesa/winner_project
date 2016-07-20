@@ -3,16 +3,22 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
-  # resources :messages
+
+  resources :users do
+    resources :messages
+  end
 
 
-  get 'message/index/:receiver_id' => 'messages#index', as: :chatting
-  post 'message/index/:receiver_id' => 'messages#create', as: :messages
+  # get 'message/index/:receiver_id' => 'messages#index', as: :chatting
+  # post 'message/index/:receiver_id' => 'messages#create', as: :messages
+  # get 'show/:id' => 'welcome#show', as: :welcome_user_show
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

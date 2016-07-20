@@ -2,7 +2,8 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @receiver_user = User.find(params[:receiver_id])
+# binding.pry
+    @receiver_user = User.friendly.find(params[:user_id])
 # binding.pry
     # unless current_user.received_messages.where(sender: @receiver) &&
     #  @receiver.sent_messages.where(receiver: current_user)
@@ -35,10 +36,10 @@ class MessagesController < ApplicationController
   def create
    # binding.pry
     @message = Message.new(message_params)
-    @message.receiver_id = params[:receiver_id]
-    @message.sender_id = current_user.id
+    # # @message.receiver_id = params[:receiver_id]
+    # @message.sender_id = current_user.id
     @message.save
-    redirect_to chatting_path #(receiver_id: @message.receiver_id), method: :get
+    redirect_to user_messages_path #(receiver_id: @message.receiver_id), method: :get
 
   end
 

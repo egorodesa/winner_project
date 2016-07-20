@@ -12,8 +12,9 @@
   <p><strong>current user:</strong> <%= current_user.email %>
 
   <%= link_to "homepage", root_path %> |
-  <%= link_to "edit user", edit_user_registration_path %> |
-    <%#= link_to "delete user", {controller:'devise/registrations', action: 'destroy'}, method: :delete %> |
+  <%= link_to "show user profile", user_path(current_user) %> |
+  <%= link_to "edit user profile", edit_user_registration_path %> |
+    <%#= link_to "delete user", {controller:'devise/registrations', action: 'destroy'}, method: :delete %>
   <%= link_to "logout", destroy_user_session_path, method: :delete %>
 
   <p>

@@ -1,16 +1,15 @@
 class WelcomeController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
-  def index
-    @users = User.all.page(params[:page]).per(10)
+  # def index
+  #   @users = User.all.page(params[:page]).per(10)
 
 
 
-  end
+  # end
 
-  def show
-    # widget = Widget.find 42
-    # widget.versions
-  end
+  # def show
+  #   @user = User.friendly.find[params[:id]]
+  # end
 
 end

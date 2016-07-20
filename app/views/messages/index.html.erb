@@ -10,8 +10,9 @@
 <p>
 Put in new message:
 <p>
-<%= form_for @message do |f| %>
+<%= form_for @message, url: user_messages_path do |f| %>
   <%= f.text_field :body %>
-  <%= f.hidden_field :receiver_id, { :receiver_id => @message.receiver_id } %>
+  <%= f.hidden_field :receiver_id, { :value => @receiver_user.id } %>
+  <%= f.hidden_field :sender_id, { :value => current_user.id } %>
   <%= f.submit "Send" %>
 <% end %>
