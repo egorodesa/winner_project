@@ -22,5 +22,18 @@ permit_params :email, :first_name, :last_name, :address, :slug
 #   permitted
 # end
 
+  index do
+    selectable_column
+    # id_column
+    column :email
+    column :first_name
+    column :last_name
+    column :address
+    column :slug
+    column :sign_in_count
+    column :created_at
+    actions
+  end
+
 
 end

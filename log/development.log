@@ -27363,3 +27363,2464 @@ Processing by MessagesController#index as HTML
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 245]]
   Rendered messages/index.html.erb within layouts/application (3.4ms)
 Completed 200 OK in 86ms (Views: 78.7ms | ActiveRecord: 0.8ms)
+  [1m[36mMessage Load (4.7ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."sender_id" IS NULL[0m
+  [1m[35mMessage Load (0.6ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."sender_id" IS NULL
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 2]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 3]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."receiver_id" IS NULL[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 17]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 18]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 19]]
+  [1m[35m (6.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 20]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 21]]
+  [1m[35m (4.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 22]]
+  [1m[36m (5.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 23]]
+  [1m[35m (5.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 24]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages"
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-07-21 00:08:21 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (2.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (96.1ms)
+Completed 200 OK in 684ms (Views: 580.4ms | ActiveRecord: 2.6ms)
+
+
+Started PUT "/users" for 127.0.0.1 at 2016-07-21 00:09:40 +0300
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yOLFyesc0w6WSlTgSN8fpNuC5MzMydL08B69AC0aqWUxyY7POcl1ptAOsCQ/mbeI0aAbZEC1vSI9KY6StciImg==", "user"=>{"email"=>"egor.odessa@gmail.com", "first_name"=>"test", "last_name"=>"name", "address"=>"", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0000000509bf50 @tempfile=#<Tempfile:/tmp/RackMultipart20160721-30590-1emd9uk.jpg>, @original_filename="14203536683_ac94ee491b_h.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"14203536683_ac94ee491b_h.jpg\"\r\nContent-Type: image/jpeg\r\n">, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 245]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/dbfbc1659a52d7955c54b1444f1a77ce20160721-30590-62hs87.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/dbfbc1659a52d7955c54b1444f1a77ce20160721-30590-1f89viz.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/dbfbc1659a52d7955c54b1444f1a77ce20160721-30590-1f89viz.jpg[0]'
+Command :: convert '/tmp/dbfbc1659a52d7955c54b1444f1a77ce20160721-30590-1f89viz.jpg[0]' -auto-orient -resize "300x300>" '/tmp/c81dd0bd2c51c308947e2a117f007f3320160721-30590-3u6ij1'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/dbfbc1659a52d7955c54b1444f1a77ce20160721-30590-1f89viz.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/dbfbc1659a52d7955c54b1444f1a77ce20160721-30590-1f89viz.jpg[0]'
+Command :: convert '/tmp/dbfbc1659a52d7955c54b1444f1a77ce20160721-30590-1f89viz.jpg[0]' -auto-orient -resize "100x100>" '/tmp/c81dd0bd2c51c308947e2a117f007f3320160721-30590-xjs40d'
+Command :: file -b --mime '/tmp/dbfbc1659a52d7955c54b1444f1a77ce20160721-30590-i5cpn0.jpg'
+  [1m[35mSQL (3.0ms)[0m  UPDATE "users" SET "avatar_file_name" = ?, "avatar_content_type" = ?, "avatar_file_size" = ?, "avatar_updated_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["avatar_file_name", "14203536683_ac94ee491b_h.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 1095855], ["avatar_updated_at", "2016-07-20 21:09:40.492134"], ["updated_at", "2016-07-20 21:09:41.196273"], ["id", 245]]
+DEPRECATION WARNING: PaperTrail.track_associations has not been set. As of PaperTrail 5, it defaults to false. Tracking associations is an experimental feature so we recommend setting PaperTrail.config.track_associations = false in your config/initializers/paper_trail.rb . (called from service at /home/egor/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140)
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "versions" ("event", "object", "whodunnit", "created_at", "item_id", "item_type") VALUES (?, ?, ?, ?, ?, ?)[0m  [["event", "update"], ["object", "---\nid: 245\nemail: egor.odessa@gmail.com\nencrypted_password: \"$2a$11$7oFV/jyAHsVBT7U23F/WX.RpNa5MAzMZlxJa.6mqXSOq2o/HZwwK.\"\nreset_password_token: \nreset_password_sent_at: \nremember_created_at: \nsign_in_count: 3\ncurrent_sign_in_at: 2016-07-20 20:19:32.286927000 Z\nlast_sign_in_at: 2016-07-20 19:20:19.941537000 Z\ncurrent_sign_in_ip: 127.0.0.1\nlast_sign_in_ip: 127.0.0.1\ncreated_at: 2016-07-20 18:26:17.983421000 Z\nupdated_at: 2016-07-20 20:19:32.288016000 Z\nfirst_name: test\nlast_name: name\naddress: ''\nslug: test-name\navatar_file_name: \navatar_content_type: \navatar_file_size: \navatar_updated_at: \n"], ["whodunnit", "245"], ["created_at", "2016-07-20 21:09:41.196273"], ["item_id", 245], ["item_type", "User"]]
+DEPRECATION WARNING: PaperTrail.track_associations has not been set. As of PaperTrail 5, it defaults to false. Tracking associations is an experimental feature so we recommend setting PaperTrail.config.track_associations = false in your config/initializers/paper_trail.rb . (called from service at /home/egor/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140)
+  [1m[35m (18.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 1422ms (ActiveRecord: 25.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-21 00:09:41 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 10 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 270ms (Views: 266.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/test-name" for 127.0.0.1 at 2016-07-21 00:09:45 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"test-name"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."slug" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["slug", "test-name"]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 123ms (Views: 116.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-07-21 00:09:52 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 103ms (Views: 99.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/test-name" for 127.0.0.1 at 2016-07-21 00:09:54 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"test-name"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."slug" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["slug", "test-name"]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 102ms (Views: 96.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-21 00:12:33 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 10 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+     9: <body>
+    10: 
+    11: <% if user_signed_in? %>
+    12:   <%= image_tag @user.avatar.url(:thumb) %>
+    13:   <p><strong>current user:</strong> <%= current_user.email %>
+    14: 
+    15:   <%= link_to "homepage", root_path %> |
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1064621972183600881_69841209281540'
+
+
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.1ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.1ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.5ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.7ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (61.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-21 00:12:51 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" LIMIT 10 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 89ms (Views: 85.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-b54bffa3d9aa7f1c2316efa103542f20cea408531e328c12e08862ad6ac775f3.css?body=1" for 127.0.0.1 at 2016-07-21 00:12:51 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:51 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:51 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-07-21 00:12:52 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-21 00:13:00 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 10 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 148ms (Views: 143.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-b54bffa3d9aa7f1c2316efa103542f20cea408531e328c12e08862ad6ac775f3.css?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-07-21 00:13:01 +0300
+
+
+Started GET "/users/test-name" for 127.0.0.1 at 2016-07-21 00:13:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"test-name"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."slug" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["slug", "test-name"]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 94ms (Views: 90.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-07-21 00:13:09 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 101ms (Views: 98.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-21 00:13:10 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 10 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 105ms (Views: 96.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/38495564-3b90-4513-ab2c-df7f302c36ce/messages" for 127.0.0.1 at 2016-07-21 00:13:21 +0300
+Processing by MessagesController#index as HTML
+  Parameters: {"user_id"=>"38495564-3b90-4513-ab2c-df7f302c36ce"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."slug" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["slug", "38495564-3b90-4513-ab2c-df7f302c36ce"]]
+  [1m[35mMessage Load (0.8ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."sender_id" = ? AND "messages"."receiver_id" = 246  [["sender_id", 245]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."sender_id" = ? AND "messages"."receiver_id" = 245[0m  [["sender_id", 246]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 246]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 245]]
+  Rendered messages/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 103ms (Views: 93.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-07-21 01:10:28 +0300
+
+ArgumentError (No association found for name `messages'. Has it been defined yet?):
+  app/models/user.rb:6:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/admin/user.rb:1:in `<top (required)>'
+
+
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (33.4ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (24.6ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.6ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (113.8ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (33.1ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.7ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (73.6ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-07-21 01:11:48 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+Completed 401 Unauthorized in 76ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2016-07-21 01:11:49 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/devise/shared/_links.erb (6.8ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (179.4ms)
+Completed 200 OK in 594ms (Views: 569.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2016-07-21 01:11:56 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k/mhLh8mXpukYF88pyVNq1mX1MJIREqeA0p9sFTf3fxq0uoozfP4M+Iku/jQY+WHU7UrasQ4JUjOfU4izA38Aw==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["email", "admin@example.com"]]
+  [1m[35m (0.9ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "admin_users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?[0m  [["last_sign_in_at", "2016-07-20 18:26:42.983175"], ["current_sign_in_at", "2016-07-20 22:11:57.032604"], ["sign_in_count", 3], ["updated_at", "2016-07-20 22:11:57.036439"], ["id", 1]]
+  [1m[35m (4.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 193ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-07-21 01:11:57 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/page/index.html.arb (203.0ms)
+Completed 200 OK in 231ms (Views: 211.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:12:00 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (188.2ms)
+Completed 200 OK in 210ms (Views: 196.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/admin_users/new" for 127.0.0.1 at 2016-07-21 01:12:05 +0300
+Processing by Admin::AdminUsersController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/new.html.arb (136.1ms)
+Completed 200 OK in 145ms (Views: 139.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:12:25 +0300
+Processing by Admin::AdminUsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFH6A8VrbZxFyig6Lg/lpdmwM8ayfDTFnva9YzJgEw8I8APi3Mtb/kj7p48DYWu7aMw47PJW8KkOBlcpctlKdQ==", "admin_user"=>{"email"=>"egor.odessa@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Admin user"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mAdminUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = 'egor.odessa@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "egor.odessa@gmail.com"], ["encrypted_password", "$2a$11$kq2tureWqsrfflJj7JZ..O.MP7xaUh9rgJYhtsEOlyDWyLhSVR5Gm"], ["created_at", "2016-07-20 22:12:25.501567"], ["updated_at", "2016-07-20 22:12:25.501567"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/admin_users/2
+Completed 302 Found in 344ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/admin/admin_users/2" for 127.0.0.1 at 2016-07-21 01:12:25 +0300
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/show.html.arb (192.6ms)
+Completed 200 OK in 205ms (Views: 197.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:12:32 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (133.9ms)
+Completed 200 OK in 141ms (Views: 135.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/admin_users/2" for 127.0.0.1 at 2016-07-21 01:12:41 +0300
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/show.html.arb (137.3ms)
+Completed 200 OK in 144ms (Views: 139.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/admin_users/2/edit" for 127.0.0.1 at 2016-07-21 01:12:43 +0300
+Processing by Admin::AdminUsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/edit.html.arb (148.9ms)
+Completed 200 OK in 157ms (Views: 152.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:12:46 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (138.3ms)
+Completed 200 OK in 146ms (Views: 140.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/admin/admin_users/batch_action" for 127.0.0.1 at 2016-07-21 01:12:53 +0300
+Processing by Admin::AdminUsersController#batch_action as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3TDkp/VUqJ7w3rtNxEz7D6nbWF+UkuRxBONV3I0nkCqJkR1G7PSe/P3vNPjpInURGKdTddS4IB2UE7+WzZ7JUA==", "batch_action"=>"destroy", "batch_action_inputs"=>"{}", "collection_selection"=>["1"]}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "admin_users" WHERE "admin_users"."id" = ?  [["id", 1]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/admin_users
+Completed 302 Found in 20ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:12:54 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2016-07-21 01:12:54 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/devise/shared/_links.erb (0.5ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (134.5ms)
+Completed 200 OK in 292ms (Views: 287.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2016-07-21 01:12:57 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xlKKCAysQmZVUlhJfng/AFLVeycZtUiiWqU4EbYZ+byS83PpFQx0BFhj1/xTFrEe46lwDVmfjM7KVdJb9qCgxg==", "admin_user"=>{"email"=>"egor.odessa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["email", "egor.odessa@gmail.com"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "admin_users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?  [["last_sign_in_at", "2016-07-20 22:12:57.954339"], ["current_sign_in_at", "2016-07-20 22:12:57.954339"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-07-20 22:12:57.956044"], ["id", 2]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/admin_users
+Completed 302 Found in 181ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:12:58 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.7ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (337.6ms)
+Completed 200 OK in 348ms (Views: 339.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:13:03 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mMessage Load (0.7ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+DEPRECATION WARNING: PaperTrail.track_associations has not been set. As of PaperTrail 5, it defaults to false. Tracking associations is an experimental feature so we recommend setting PaperTrail.config.track_associations = false in your config/initializers/paper_trail.rb . (called from collection at /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/lib/active_admin/inputs/filters/select_input.rb:43)
+  [1m[35mPaperTrail::Version Load (3.1ms)[0m  SELECT "versions".* FROM "versions"
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (476.7ms)
+Completed 200 OK in 498ms (Views: 482.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:13:04 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count  [["namespace", "admin"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc[0m
+  [1m[35m (0.3ms)[0m  SELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (201.1ms)
+Completed 200 OK in 220ms (Views: 209.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:13:09 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[35mPaperTrail::Version Load (1.1ms)[0m  SELECT "versions".* FROM "versions"
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (239.7ms)
+Completed 200 OK in 248ms (Views: 240.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:34:59 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mMessage Load (0.8ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+DEPRECATION WARNING: PaperTrail.track_associations has not been set. As of PaperTrail 5, it defaults to false. Tracking associations is an experimental feature so we recommend setting PaperTrail.config.track_associations = false in your config/initializers/paper_trail.rb . (called from collection at /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/lib/active_admin/inputs/filters/select_input.rb:43)
+  [1m[35mPaperTrail::Version Load (4.0ms)[0m  SELECT "versions".* FROM "versions"
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (386.9ms)
+Completed 200 OK in 453ms (Views: 389.3ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:35:00 +0300
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:35:05 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count  [["namespace", "admin"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc[0m
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (160.8ms)
+Completed 200 OK in 176ms (Views: 167.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:35:08 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[35mPaperTrail::Version Load (2.8ms)[0m  SELECT "versions".* FROM "versions"
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (355.4ms)
+Completed 200 OK in 363ms (Views: 353.3ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:35:09 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count  [["namespace", "admin"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc[0m
+  [1m[35m (0.3ms)[0m  SELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (252.1ms)
+Completed 200 OK in 271ms (Views: 255.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:35:27 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count  [["namespace", "admin"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc[0m
+  [1m[35m (0.3ms)[0m  SELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (181.8ms)
+Completed 200 OK in 193ms (Views: 184.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:35:27 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:27 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:27 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:35:28 +0300
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:35:31 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count  [["namespace", "admin"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc[0m
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (148.9ms)
+Completed 200 OK in 156ms (Views: 150.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:35:32 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (143.9ms)
+Completed 200 OK in 160ms (Views: 151.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:35:34 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?  [["namespace", "admin"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count[0m  [["namespace", "admin"]]
+  [1m[35m (0.3ms)[0m  SELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc
+  [1m[36m (0.3ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (210.3ms)
+Completed 200 OK in 221ms (Views: 212.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?  [["namespace", "admin"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count[0m  [["namespace", "admin"]]
+  [1m[35m (0.3ms)[0m  SELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc
+  [1m[36m (0.3ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (221.8ms)
+Completed 200 OK in 235ms (Views: 224.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:16 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/assets/active_admin/datepicker/datepicker-input-icon-d9c2bb73769af777c8a71720d29741f3a499aebd5a043e9a119bd0d9597aed47.png" for 127.0.0.1 at 2016-07-21 01:36:17 +0300
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:36:18 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mPaperTrail::Version Load (1.2ms)[0m  [1mSELECT "versions".* FROM "versions"[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (254.9ms)
+Completed 200 OK in 265ms (Views: 257.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:36:20 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?  [["namespace", "admin"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count[0m  [["namespace", "admin"]]
+  [1m[35m (0.3ms)[0m  SELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc
+  [1m[36m (0.3ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (219.7ms)
+Completed 200 OK in 233ms (Views: 223.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:36:22 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (133.4ms)
+Completed 200 OK in 141ms (Views: 136.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:36:23 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count  [["namespace", "admin"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc[0m
+  [1m[35m (0.4ms)[0m  SELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (214.7ms)
+Completed 200 OK in 227ms (Views: 218.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:36:25 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[35mPaperTrail::Version Load (1.1ms)[0m  SELECT "versions".* FROM "versions"
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (212.3ms)
+Completed 200 OK in 220ms (Views: 213.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:41:18 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+DEPRECATION WARNING: PaperTrail.track_associations has not been set. As of PaperTrail 5, it defaults to false. Tracking associations is an experimental feature so we recommend setting PaperTrail.config.track_associations = false in your config/initializers/paper_trail.rb . (called from collection at /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/lib/active_admin/inputs/filters/select_input.rb:43)
+  [1m[35mPaperTrail::Version Load (1.4ms)[0m  SELECT "versions".* FROM "versions"
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (253.3ms)
+Completed 200 OK in 310ms (Views: 256.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:41:19 +0300
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2016-07-21 01:41:23 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/page/index.html.arb (96.3ms)
+Completed 200 OK in 107ms (Views: 103.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:41:25 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (210.0ms)
+Completed 200 OK in 231ms (Views: 218.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:41:35 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (128.3ms)
+Completed 200 OK in 185ms (Views: 134.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:36 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:37 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:37 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:37 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:37 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:41:37 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:41:37 +0300
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:43:22 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+DEPRECATION WARNING: PaperTrail.track_associations has not been set. As of PaperTrail 5, it defaults to false. Tracking associations is an experimental feature so we recommend setting PaperTrail.config.track_associations = false in your config/initializers/paper_trail.rb . (called from collection at /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/lib/active_admin/inputs/filters/select_input.rb:43)
+  [1m[35mPaperTrail::Version Load (2.2ms)[0m  SELECT "versions".* FROM "versions"
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (297.5ms)
+Completed 200 OK in 349ms (Views: 299.7ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2016-07-21 01:43:30 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/page/index.html.arb (391.2ms)
+Completed 200 OK in 404ms (Views: 399.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:43:32 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (397.9ms)
+Completed 200 OK in 426ms (Views: 411.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/admin_users/2" for 127.0.0.1 at 2016-07-21 01:43:45 +0300
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/show.html.arb (140.4ms)
+Completed 200 OK in 151ms (Views: 145.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/admin_users/2/edit" for 127.0.0.1 at 2016-07-21 01:43:49 +0300
+Processing by Admin::AdminUsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/edit.html.arb (150.7ms)
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `first_name' for #<AdminUser:0x007f0a58a8f098>):
+    1: insert_tag renderer_for(:edit)
+  app/admin/admin_user.rb:24:in `block (3 levels) in <top (required)>'
+  app/admin/admin_user.rb:22:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.5ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.1ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (29.1ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (54.8ms)
+
+
+Started GET "/admin/admin_users/2/edit" for 127.0.0.1 at 2016-07-21 01:44:09 +0300
+Processing by Admin::AdminUsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/edit.html.arb (119.8ms)
+Completed 200 OK in 190ms (Views: 126.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:10 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:11 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:44:11 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:44:11 +0300
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:44:21 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (157.1ms)
+Completed 200 OK in 166ms (Views: 159.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/admin_users/2" for 127.0.0.1 at 2016-07-21 01:44:26 +0300
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/show.html.arb (136.5ms)
+Completed 200 OK in 144ms (Views: 139.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-07-21 01:45:15 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/page/index.html.arb (98.0ms)
+Completed 200 OK in 109ms (Views: 105.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2016-07-21 01:45:18 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT 30 OFFSET 0) subquery_for_count  [["namespace", "admin"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments"  ORDER BY resource_type asc[0m
+  [1m[35m (0.3ms)[0m  SELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments"  ORDER BY author_type asc
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (143.8ms)
+Completed 200 OK in 157ms (Views: 150.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:45:19 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (190.2ms)
+Completed 200 OK in 199ms (Views: 192.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:45:21 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "messages".* FROM "messages"
+DEPRECATION WARNING: PaperTrail.track_associations has not been set. As of PaperTrail 5, it defaults to false. Tracking associations is an experimental feature so we recommend setting PaperTrail.config.track_associations = false in your config/initializers/paper_trail.rb . (called from collection at /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/lib/active_admin/inputs/filters/select_input.rb:43)
+  [1m[36mPaperTrail::Version Load (3.4ms)[0m  [1mSELECT "versions".* FROM "versions"[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (254.8ms)
+Completed 200 OK in 269ms (Views: 257.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:45:37 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (122.2ms)
+Completed 200 OK in 172ms (Views: 127.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:46:01 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (148.3ms)
+Completed 200 OK in 212ms (Views: 155.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:46:01 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:46:02 +0300
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:46:05 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (162.3ms)
+Completed 200 OK in 171ms (Views: 164.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:46:05 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:46:06 +0300
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:46:19 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (124.6ms)
+Completed 200 OK in 198ms (Views: 129.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:46:20 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:20 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:20 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:46:21 +0300
+
+
+Started GET "/admin/admin_users/2" for 127.0.0.1 at 2016-07-21 01:46:25 +0300
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAdminUser Load (0.4ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?  [["resource_type", "AdminUser"], ["resource_id", "2"], ["namespace", "admin"]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/show.html.arb (192.5ms)
+Completed 200 OK in 202ms (Views: 195.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2016-07-21 01:47:58 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/page/index.html.arb (96.1ms)
+Completed 200 OK in 146ms (Views: 101.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:48:02 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mMessage Load (0.6ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+DEPRECATION WARNING: PaperTrail.track_associations has not been set. As of PaperTrail 5, it defaults to false. Tracking associations is an experimental feature so we recommend setting PaperTrail.config.track_associations = false in your config/initializers/paper_trail.rb . (called from collection at /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/lib/active_admin/inputs/filters/select_input.rb:43)
+  [1m[35mPaperTrail::Version Load (2.2ms)[0m  SELECT "versions".* FROM "versions"
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (328.3ms)
+Completed 200 OK in 364ms (Views: 329.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2016-07-21 01:49:21 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+DEPRECATION WARNING: PaperTrail.track_associations has not been set. As of PaperTrail 5, it defaults to false. Tracking associations is an experimental feature so we recommend setting PaperTrail.config.track_associations = false in your config/initializers/paper_trail.rb . (called from collection at /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/lib/active_admin/inputs/filters/select_input.rb:43)
+  [1m[35mPaperTrail::Version Load (1.7ms)[0m  SELECT "versions".* FROM "versions"
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (251.3ms)
+Completed 200 OK in 328ms (Views: 255.1ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:49:22 +0300
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:49:26 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (212.3ms)
+Completed 200 OK in 227ms (Views: 218.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:49:41 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (826.5ms)
+Completed 200 OK in 907ms (Views: 838.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:49:42 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:49:43 +0300
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:49:53 +0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 245]]
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (136.7ms)
+Completed 200 OK in 190ms (Views: 143.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:49:53 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:53 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:53 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:53 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:53 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:53 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:53 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:49:54 +0300
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2016-07-21 01:50:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 245]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admin_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "admin_users" LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users"  ORDER BY "admin_users"."id" desc LIMIT 30 OFFSET 0
+  Rendered /home/egor/.rvm/gems/ruby-2.3.0/bundler/gems/activeadmin-85ab3f5961e1/app/views/active_admin/resource/index.html.arb (471.6ms)
+Completed 200 OK in 538ms (Views: 482.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/active_admin.self-8bd7795db5389c16b959ee919b123610eb8bb3e42489d48a2daa3d29c2064a05.css?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/initializers/filters.self-32bfae855dd5b3ae411a41daa2081625c6f9500958554e31a2decc297f13398b.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin/print.self-ac71c4c822d3654fce8f2ea0a29f7a1c5f98978b33f2d9fd75bf0e709d9ec498.css?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-21 01:50:05 +0300
